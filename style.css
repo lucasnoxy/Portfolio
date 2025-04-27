@@ -1,0 +1,408 @@
+/* Footer */
+
+
+
+
+
+/* Footer Overall Styling */
+footer {
+  background: linear-gradient(to top, #000000, rgb(25, 25, 25)); /* Gradient background */
+  text-align: center;
+  padding: 100px 0;
+}
+
+/* Container for Footer Content */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Quick Access Links Styling */
+.footer-links {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none; /* Removes underline */
+  margin: 0 5px;
+}
+
+.footer-links span {
+  margin: 0 5px;
+  color: #fff;
+}
+
+.footer-links a {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: rgb(175, 175, 255);
+  transform: scale(1.2);
+}
+
+
+/* Social Media Icons Styling */
+.footer-social {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-social a {
+  font-size: 1.5rem; /* Adjust size of the Font Awesome icons */
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: rgb(225, 225, 255);         /* Changes color on hover */
+  transform: scale(1.5); /* Slight scaling effect on hover */
+}
+
+/* Copyright Styling */
+.footer-copyright {
+  margin-top: 10px;
+}
+
+.footer-copyright p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+
+
+
+
+
+/* APPEARANCE */
+
+
+
+
+
+h1 {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+p {
+  font-size:20px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px; /* Adjust this value to your liking */
+}
+
+
+
+
+
+/* NAVBAR */
+
+
+
+
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  padding-top: 100px; /* Adjust this value to match your nav bar height */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-radius: 10px; /* Adjust this value to your liking */
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 150px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    margin-right: 25em;
+    list-style: none;
+}
+nav ul a{
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    font-size: 20px;
+    text-decoration: none;
+}
+nav > a{
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+    }
+    section{
+        color: white;
+        padding: 10%;
+    }
+    /* CSS code for translucent navbar effect */
+nav {
+        background-color: rgba(0, 0, 0, 0.35); /* Adjust the RGBA values for desired color and transparency */
+    backdrop-filter: blur(5px); /* Optional: adds a blur effect to the background */
+    -webkit-backdrop-filter: blur(10px); /* Optional: adds a blur effect to the background for Safari */
+    border-bottom: 0px solid rgba(255, 255, 255, 0.3); /* Optional: adds a border to the bottom of the navbar */
+    padding: 10px 20px; /* Adjust padding as needed */
+    position: fixed; /* Keeps the navbar fixed at the top */
+    width: 100%; /* Ensures the navbar spans the full width of the viewport */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+}
+
+
+
+
+
+/* NAVBAR CENTER TEXT */
+
+
+
+
+
+nav{
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    padding: 10px 20px; /* Adjust padding as needed */
+}
+nav ul{
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+/* NAVBAR COLOR EFFECT */
+
+
+
+
+
+
+nav ul a {
+  display: inline-block; /* required for transform animations */
+  transform: scale(1);
+  transition: 
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+    color 0.5s ease;
+}
+
+nav ul a:hover {
+  color: rgba(175, 175, 255, 1);
+}
+
+
+/* --- Style for the "Lucas" link (direct child of nav) --- */
+nav > a {
+    text-decoration: none;
+    color: #ffffff; /* Use the color you want for Lucas */
+    /* No underline animation on this link */
+  }
+  
+  /* --- Styles for the navigation links inside the ul --- */
+  nav ul a {
+    position: relative;             /* Establish positioning context */
+    display: inline-block;          /* Essential for proper pseudo-element positioning */
+    padding-bottom: 5px;            /* Reserve space for the underline */
+    text-decoration: none;
+    color: #ffffff;                 /* Link text color */
+    transition: color 0.3s ease;    /* Smooth any color transitions if applied */
+  }
+  
+  /* --- Underline pseudo-element for nav ul links --- */
+  nav ul a::after {
+    content: "";
+    position: absolute;
+    left: 50%;                      /* Start at the center */
+    bottom: 0;                      /* Align at the bottom of the link */
+    width: 50%;                     /* Maximum width of the underline (adjustable) */
+    height: 2px;                    /* Thickness of the underline */
+    background-color: rgb(175, 175, 255); /* Underline color */
+    transform: translateX(-50%) scaleX(0); /* Initially scaled down to 0 */
+    transform-origin: center;       /* Animates from the center */
+    transition: transform 0.3s ease;  /* Smooth transformation effect */
+  }
+  
+  /* --- Hover state: expand the underline smoothly --- */
+  nav ul a:hover::after {
+    transform: translateX(-50%) scaleX(1); /* Expands the line to its defined width */
+  }
+  
+  
+  
+  
+  
+  /* BACKGROUND COLOR */
+
+
+
+
+
+body {
+    background-color: rgb(25, 25, 25);
+}
+
+
+
+
+/* CUSTOM CURSOR */
+
+
+
+
+
+/* Hide the default cursor */
+* {
+  cursor: none !important;
+}
+
+/* Main cursor (small circle) */
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  background-color: rgb(150, 150, 255); /* Adjust as desired */
+  border-radius: 50%;
+  z-index: 1000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+/* Trailing cursor (big circle) */
+#trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(185, 185, 255, 0.25); /* Adjust as desired */
+  border-radius: 50%;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+
+
+   
+  
+
+
+
+/* DROPDOWN BOX FEATURES */
+
+
+
+
+
+
+.dropdown-menu {
+  background-color: rgba(10, 10, 10, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+
+
+.dropdown-menu li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px;
+    width: max-content;
+    
+    /* Arrange items in a 3x3 grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* When active, show the dropdown */
+  .dropdown.active .dropdown-menu {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+  
+  /* Center text in dropdown items */
+  .dropdown-menu li a {
+    text-align: center;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+nav ul li {
+  position: relative;
+}

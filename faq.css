@@ -1,0 +1,75 @@
+/* Reset basic defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* FAQ container styling */
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #1f1f1f;  /* Dark background */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Individual FAQ item */
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+/* Question styling */
+.faq-question {
+  padding: 15px 20px;
+  background: #212121;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #fff; /* White text */
+  transition: background 0.3s ease;
+}
+.faq-question:hover {
+  background: #2e2e2e;  /* Slightly lighter on hover */
+}
+
+/* Icon styling */
+.faq-icon {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 1.5rem;
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* Answer styling */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  background: #242424;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-answer p {
+  padding: 0 0 15px 0;
+  color: #fff;
+}
+
+/* Active state: when the FAQ item is open */
+.faq-item.active .faq-answer {
+  padding: 15px 20px;
+  max-height: 500px; /* Ensure this value is high enough for your content */
+}
+.faq-item.active .faq-question {
+  background: #242424;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(180deg); /* Rotate the icon when active */
+}
