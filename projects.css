@@ -1,11 +1,14 @@
 /* TEXT */
 
-
-
-
 h2 {
     font-size: 30px;
     color: white;
     text-align: center;
 }
 
+html {
+    scroll-behavior: smooth;
+    /* Add scroll-padding-top to offset fixed header height if needed. Adjust value as necessary. */
+    scroll-padding-top: 100px;
+  }
+  

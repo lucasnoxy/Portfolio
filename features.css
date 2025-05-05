@@ -1,0 +1,116 @@
+/* Hamburger container (fixed position) */
+.hamburger-container {
+  position: fixed;
+  top: 15px;    
+  left: 20px;   
+  padding: 50px 0px;
+  z-index: 1002;
+}
+
+/* Hamburger icon (menu-toggle) */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1002;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Sidebar Menu Styling */
+.menu {
+  position: fixed;
+  top: 11%;
+  bottom: 11%;
+  left: 0;
+  width: 250px;
+  background: rgba(10, 10, 10, 0.35);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding-top: 60px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.menu ul li {
+  margin-bottom: 20px;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.menu ul li a:hover {
+  color: rgb(100, 100, 255);
+  transition: 0.3s ease;
+}
+
+.menu ul li a {
+  transition: 0.3s ease;
+}
+
+.menu ul a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.menu ul a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 2px;
+  background-color: rgb(100, 100, 255);
+  width: 0;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.menu ul a:hover::after,
+.menu ul a.active::after {
+  width: 60%;
+}
+
+/* Open state: slide the sidebar into view */
+.menu.open {
+  transform: translateX(0);
+}
+
+.menu {
+  backdrop-filter: blur(5px); /* Optional: adds a blur effect to the background */
+  -webkit-backdrop-filter: blur(5px); /* Optional: adds a blur effect to the background for Safari */
+}

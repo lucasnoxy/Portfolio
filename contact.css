@@ -179,3 +179,9 @@
 .send-button {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+
+/* Ensure the button container uses flexbox to keep buttons on the same line */
+.button-group {
+  flex-wrap: nowrap;   /* Prevent the buttons from stacking */
+}

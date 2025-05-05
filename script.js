@@ -1,4 +1,3 @@
-
 /* SMOOTH SCROLLING */
 
 let isAnimating = false; // Tracks whether the smoothScroll loop is active
@@ -8,7 +7,7 @@ function smoothScroll() {
   const currentScrollY = window.scrollY;
   const distance = scrollPosition - currentScrollY;
   if (Math.abs(distance) > 1) {
-    window.scrollBy(0, distance / 10);
+    window.scrollBy(0, distance / 20); // Reduced speed for longer animation
     requestAnimationFrame(smoothScroll);
   } else {
     // Snap to the target to avoid sub-pixel differences
@@ -45,25 +44,32 @@ window.addEventListener("load", () => {
   scrollPosition = window.scrollY;
 });
 
-  
 
 
 
 
-    /* CUSTOM CURSOR */
-  
+// CUSTOM CURSOR
 
 
 
 
-    
+
+
 document.addEventListener("DOMContentLoaded", () => {
-  const cursor = document.getElementById("cursor");
-  const trail = document.getElementById("trail");
+  // Try to get the elements; if they don't exist, create them.
+  let cursor = document.getElementById("cursor");
+  let trail = document.getElementById("trail");
 
-  if (!cursor || !trail) {
-    console.error("Cursor or trail element is missing in the DOM.");
-    return;
+  if (!cursor) {
+    cursor = document.createElement("div");
+    cursor.id = "cursor";
+    document.body.appendChild(cursor);
+  }
+
+  if (!trail) {
+    trail = document.createElement("div");
+    trail.id = "trail";
+    document.body.appendChild(trail);
   }
 
   // Restore last saved cursor position (or center if not available)
@@ -81,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Immediately position the small cursor from the start
   cursor.style.transform = `translate(${targetX}px, ${targetY}px) translate(-50%, -50%)`;
-  // Also set trail at the same position initially
+  // Position the trailing cursor at the same initial position
   trail.style.transform = `translate(${trailX}px, ${trailY}px) translate(-50%, -50%)`;
 
   // Update cursor position on mousemove and store the value
@@ -127,63 +133,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animateTrail();
 });
-
-  
-  
-  
-
-
-
-
-//* DROPDOWN BOX FEATURES *//
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const dropdown = document.querySelector('.dropdown');
-  const dropdownToggle = dropdown?.querySelector('.dropdown-toggle');
-
-  // Flag to track if the dropdown is explicitly toggled open via click.
-  let toggledOpen = false;
-
-  function openDropdown() {
-    dropdown.classList.add('active');
-  }
-
-  function closeDropdown() {
-    dropdown.classList.remove('active');
-  }
-
-  // Toggle the dropdown when clicking the "Features" link.
-  dropdownToggle?.addEventListener('click', (e) => {
-    e.preventDefault();
-    toggledOpen = !toggledOpen;
-    if (toggledOpen) {
-      openDropdown();
-    } else {
-      closeDropdown();
-    }
-  });
-
-  // Open the dropdown on mouse enter.
-  dropdown.addEventListener('mouseenter', () => {
-    openDropdown();
-  });
-
-  // Close the dropdown on mouse leave if it wasn't explicitly toggled open.
-  dropdown.addEventListener('mouseleave', () => {
-    if (!toggledOpen) {
-      closeDropdown();
-    }
-  });
-
-  // Close the dropdown if clicking anywhere outside of it.
-  document.addEventListener('click', (e) => {
-    if (dropdown && !dropdown.contains(e.target)) {
-      toggledOpen = false;
-      closeDropdown();
-    }
-  });
-});
-
