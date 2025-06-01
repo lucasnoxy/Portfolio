@@ -1,0 +1,385 @@
+* {
+  font-family: "arial";
+}
+
+body {
+  background-color: rgb(15, 15, 15);
+}
+
+
+
+
+
+
+
+
+/* Footer */
+
+
+
+
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: rgb(20, 20, 20);
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.footer-section {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-left p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.footer-left .description {
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  color: #ccc;
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+  color: white;
+  border-color: white;
+  background-color: transparent;
+}
+
+.info-item, .link-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #ccc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.info-item i, .link-item i {
+  margin-right: 10px;
+}
+
+.link-item:hover {
+  color: white;
+  transform: translate(-3px, -3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #333;
+  background-color: rgb(20, 20, 20);
+  color: #ccc;
+  font-size: 16px;
+}
+
+.footer-bottom a {
+  color: #ccc;
+  transition: 0.4s;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* APPEARANCE */
+
+
+
+
+.nav-spacer {
+  height: 60px;
+}
+
+.footer-spacer {
+  height: 60px;
+}
+
+
+h3 {
+  font-size: 25px;
+  color: white;
+  text-align: center; 
+}
+
+h1 {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-size:20px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px; /* Adjust this value to your liking */
+}
+
+
+
+
+
+
+
+
+
+/* NAVBAR */
+
+
+
+
+
+
+
+
+
+/* Reset default margins for the page */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Fixed top navbar with a solid dark grey background */
+.desktop-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(20, 20, 20);
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+/* Main container for centering nav content */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Desktop navigation links styling */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px 20px;
+  transition: 0.4s;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-links li a i {
+  margin-right: 5px;
+}
+
+.nav-links li a:hover {
+  color: rgb(125, 125, 255);
+}
+
+.nav-links li a.active {
+  position: relative;
+  color: rgb(125, 125, 255);
+}
+
+.nav-links li a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 70%;
+  height: 2px;
+  background-color: rgb(100, 100, 255);
+  transform: translateX(-50%);
+}
+
+
+
+/* Hamburger Menu */
+
+
+
+
+
+
+
+
+
+/* CUSTOM CURSOR */
+
+
+
+
+
+
+
+/* Main cursor (small circle) */
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  background-color: rgb(100, 100, 255); /* Adjust as desired */
+  border-radius: 50%;
+  z-index: 10000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+/* Trailing cursor (big circle) */
+#trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(150, 150, 255, 0.2); /* Adjust as desired */
+  border-radius: 50%;
+  z-index: 1000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+/* Hide the system cursor on desktop devices */
+* {
+  cursor: none !important;
+}
+
+/* ---------- MOBILE OVERRIDE ---------- */
+/* Hide custom cursors and restore the default cursor on devices that don't support hover */
+@media (hover: none) and (pointer: coarse) {
+  #cursor,
+  #trail {
+    display: none !important;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+}
+
+
+
+
+
+
+
+/* HIDES SCROLL BAR ON RIGHT SIDE */
+
+
+
+
+
+
+
+html::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+html {
+  scrollbar-width: none; /* Hide scrollbar for Edge and Firefox */
+}
+
+
+
+
+
+
+/* BACK TO TOP BUTTON */
+
+
+
+
+/* Back to Top Button */
+.arrow-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent; /* Remove background */
+  backdrop-filter: none; /* Remove blur effect */
+  -webkit-backdrop-filter: none; /* Safari support */
+  color: white;
+  border: 2px solid rgb(255, 255, 255); /* White border */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+
+.arrow-top:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  scale: 110%;
+}
+
+.arrow-top.show {
+  opacity: 1;
+  visibility: visible;
+}
